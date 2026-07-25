@@ -13,7 +13,7 @@ A professional SQL-based data analysis project on Amazon Shopverse e-commerce re
 
 ### Key Features
 - Complete database schema with proper constraints and data types
-- Advanced analytical queries (20+ business questions)
+- Advanced AI-generated analytical queries (20+ business questions)
 - Window functions for rankings, running totals, and moving averages
 - Time-based and YoY growth analysis
 - Customer retention and segmentation
