@@ -1,6 +1,8 @@
 # Amazon Shopverse Records | E-commerce Sales Analysis
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-Analysis-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Project-Completed-success?style=for-the-badge)
 
 **Advanced SQL Data Analysis Portfolio Project**
 
