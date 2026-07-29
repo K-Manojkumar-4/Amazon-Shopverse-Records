@@ -84,3 +84,16 @@ The repository follows a clean, modular, and production-ready structure designed
 - exploration.sql – Performs initial data discovery, quality validation, and descriptive statistics.
 - analysis.sql – Contains 20+ advanced SQL queries addressing critical business questions using CTEs, window functions, and time-series analysis.
 - RESULT.md – Dedicated folder for generated reports and analytical outputs.
+
+## 🔮 Future Enhancements
+
+- RFM Customer Segmentation  
+- Predictive sales forecasting  
+- Cancellation prediction model  
+- Real-time dashboard with DirectQuery  
+- Automated data pipeline (Python + Airflow)
+
+---
+
+**Built with precision for Data Analyst portfolios.**  
+* Amazon Shopverse Records — Turning raw sales data into actionable intelligence.*
