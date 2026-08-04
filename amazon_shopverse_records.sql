@@ -156,13 +156,19 @@ order by percent_contributes desc;
 -- 7. Discount Impact
 -- Calculate the total discount amount given across all orders and the average discount percentage (Discount). Also find which Brand offers the highest average discount.
 
-select round(sum(UnitPrice * Quantity * Discount) , 2) as total_discount_amount ,
-round(avg(Discount) * 100.0 , 2) as avg_discount_percent ,
-Brand,
-round(avg(Discount) * 100.0 , 2 ) as brand_avg_discount
-from shopverse_records
-group by Brand
-order by brand_avg_discount desc;
+--  Overall discount metrics (all orders)
+SELECT 
+    ROUND(SUM(UnitPrice * Quantity * Discount), 2) AS total_discount_amount,
+    ROUND(AVG(Discount) * 100, 2) AS avg_discount_percent
+FROM shopverse_records;
+
+--  Brand with highest average discount
+SELECT 
+    Brand,
+    ROUND(AVG(Discount) * 100, 2) AS brand_avg_discount
+FROM shopverse_records
+GROUP BY Brand
+ORDER BY brand_avg_discount DESC;
 
 -- 8. Payment Method Trends
 -- Which Payment Method is most popular? Show the count of orders and total revenue for each payment method, sorted by revenue.
@@ -205,7 +211,7 @@ select Category ,
         TotalAmount,
         ProductName
         from shopverse_records
-        where year(OrderDate) like '2024%'
+        where year(OrderDate) = 2024
         and OrderStatus = 'Delivered'
         and TotalAmount > 1000 
         and Country = 'United States'
