@@ -40,7 +40,7 @@ modify column PaymentMethod varchar(50);
 
 SHOW VARIABLES LIKE 'secure_file_priv';
 
-LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/New folder/amazon shopverse records.csv'
+LOAD DATA INFILE 'amazon shopverse records.csv'
 INTO TABLE shopverse_records
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -113,7 +113,7 @@ limit 10;
 -- 3. Time-based Analysis
 -- Find the monthly total revenue for the year 2023. Show Year-Month and Total Revenue, sorted by revenue descending.
 
-select date_format(OrderDate , '%y-%m') as year_and_month ,
+select date_format(OrderDate , '%Y-%m') as year_and_month ,
 sum(TotalAmount) as monthly_revenue
 from shopverse_records
 where year(OrderDate) = 2023
@@ -298,7 +298,7 @@ select Brand ,
 
 select date_format(OrderDate, '%y-%m') as year_and_month,
 		sum(TotalAmount) as total_revenue ,
-		round(sum(sum(TotalAmount)) over(order by date_format(OrderDate, '%y-%m')), 2) as cumulative_revenue
+		round(sum(sum(TotalAmount)) over(order by date_format(OrderDate, '%Y-%m')), 2) as cumulative_revenue
         from shopverse_records
         group by year_and_month
         order by year_and_month;
@@ -330,7 +330,7 @@ select OrderID ,
 -- Calculate the 3-month rolling average revenue (moving average). Show Year-Month and the 3-month moving average.
 
 with monthly as (
-select date_format(OrderDate , '%y-%m') as year_and_month ,
+select date_format(OrderDate , '%Y-%m') as year_and_month ,
 		sum(TotalAmount) as total_revenue 
         from shopverse_records
         group by year_and_month )
